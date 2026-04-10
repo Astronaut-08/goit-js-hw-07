@@ -30,6 +30,7 @@ const images = [
 
 // my code below
 const listGalery = document.querySelector('.gallery');
+const fragment = document.createDocumentFragment();
 
 images.forEach(item => {
   const tempLi = document.createElement('li');
@@ -45,8 +46,10 @@ images.forEach(item => {
   tempLi.style.maxWidth = '350px';
 
   tempLi.append(tempImg);
-  listGalery.append(tempLi);
+  fragment.append(tempLi);
 });
+
+listGalery.append(fragment);
 
 listGalery.style.cssText = `
   display: flex;
